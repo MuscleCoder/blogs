@@ -20,3 +20,8 @@ aws_secret_access_key = ******
 ```
 
 NOTE: you can just edit the ~/.aws/config file with information.
+
+
+
+[Instance Metadata and User Data](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html)
+

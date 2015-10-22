@@ -358,15 +358,16 @@ For example below, you may want to merge the 197cd77 and dc5a8a0 to 61a3f47
 * dc5a8a0 - add provider udsProfileYuidFinal  (2 days ago) <binyu>
 * 61a3f47 - migrate the change (2 days ago) <binyu>
 	1. rebase the change with interactive
+
+	// reabase
 	
-	## reabase
 	$ git rebase --interactive HEAD~3
 	pick 61a3f47 migrate the change in http://gerrit.pnt.corp.yahoo.com/#/c/13646/2
 	pick dc5a8a0 add provider udsProfileYuidFinal and yahoo.yinst.slingstone_cache_client
 	pick 197cd77 fix the problem of dependency
-	# Rebase 9925cbf..197cd77 onto 9925cbf
-	#
-	# Commands:
+	/ Rebase 9925cbf..197cd77 onto 9925cbf
+	/
+	/ Commands:
 	#  p, pick = use commit
 	#  r, reword = use commit, but edit the commit message
 	#  e, edit = use commit, but stop for amending
@@ -381,8 +382,11 @@ For example below, you may want to merge the 197cd77 and dc5a8a0 to 61a3f47
 	# However, if you remove everything, the rebase will be aborted.
 	#
 	# Note that empty commits are commented out
+```
+
 	2. squash the commits to the commit you pick
 	
+```
 	pick 61a3f47 migrate the change in http://gerrit.pnt.corp.yahoo.com/#/c/13646/2
 	squash dc5a8a0 add provider udsProfileYuidFinal and yahoo.yinst.slingstone_cache_client
 	squash 197cd77 fix the problem of dependency
@@ -433,6 +437,7 @@ For example below, you may want to merge the 197cd77 and dc5a8a0 to 61a3f47
 	#   modified:   pom.xml
 	#   modified:   src/main/java/com/yahoo/slingstone/searchplatform/searcher/HattrickRecommendationReasonSearcher.java
 	#   modified:   src/main/yinst/slingstone_serving_video.yicf
+```
 	3. push the change
 Tag the branch
 Sometimes we need to tag the branch, for more details you can refer here. Here is the process
@@ -464,6 +469,7 @@ It is very common that you will program locally and want to test your code. But 
 	## apply the patch to you dev box project
 	$ cd $(project) && git apply $(path)/$(patch_name)
 	4. Then you will see all the change has been apply to you remote dev box’s branch.
+
 Collaborative for same commit
 Another common usage is that A commit a change and push to gerrit, and after that B takes A’s task. How can B work on the same patch and modify the change, then push to the gerrit with same change id, which I mean with the same code review.
 	1. update the local master to the latest state, please refer to Refresh
@@ -504,16 +510,3 @@ Reference
 	• https://code.google.com/p/gerrit/
 	• Git Community Book
 Pro-Git Chinese Version | Pro-Git Mobi Version
-##Q&A
----
-
-1. **How to change Git Editor**
-
-	git config --global core.editor /usr/bin/vim
-
-1. **question 2**
-
-
-
-
-
